@@ -44,15 +44,7 @@ fetch("https://restcountries.com/v3.1/all")
         })
       });
     
-      // button.addEventListener("change", function() {
-      //   const reader= new FileReader(user.flags.png);
-        
-      //    reader.addEventListener("load", ()=>{
-      //      console.log(reader.reasult);
-      //    });
-      //     reader.readAsDataURL(this.files[0]);
-      // });
-    
+ 
       userCardContainer.append(card);
       return {
         name: user.name.common,
