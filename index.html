@@ -18,3 +18,28 @@
       </div>
       
   </div>
+  
+  <div class="search-wrapper">
+    <h3><label for="search">Type name of a country here:</label></h3>
+    <input type="search" id="search" data-search>
+  </div>
+
+  <div class="user-cards" data-user-cards-container></div>
+  <template data-user-template>
+    <div class="card">
+      <div class="header" data-header></div>
+      <div class="body" data-body></div>
+      <div id="flag-container">
+        <form id="form" type="mutipart/form-data" method="post">
+
+          <img class="image" src="" alt="">
+
+          <button type="button" id="button">Favorite</button>
+        </form>
+      </div>
+    </div>
+  </template>
+
+</body>
+
+</html>
