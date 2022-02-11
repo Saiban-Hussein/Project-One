@@ -26,3 +26,42 @@ fetch("https://restcountries.com/v3.1/all")
 
       header.textContent = user.name.common
         
+      if (searchInput.value == '') {
+        userCardContainer.style.visibility = 'hidden';
+      }
+         
+      searchInput.addEventListener("input", e => {
+        const value = e.target.value.toLowerCase();
+        users.forEach(user => {
+          const isVisible = user.name.toLowerCase().includes(value);
+          user.element.classList.toggle("hide", !isVisible)
+        
+          if (searchInput.value !== '') {
+            userCardContainer.style.visibility = 'visible';
+          } else if (searchInput.value == '') {
+            userCardContainer.style.visibility = 'hidden';
+          }
+        })
+      });
+    
+      // button.addEventListener("change", function() {
+      //   const reader= new FileReader(user.flags.png);
+        
+      //    reader.addEventListener("load", ()=>{
+      //      console.log(reader.reasult);
+      //    });
+      //     reader.readAsDataURL(this.files[0]);
+      // });
+    
+      userCardContainer.append(card);
+      return {
+        name: user.name.common,
+        flag: user.flags.png,
+        element: card
+      }
+      
+      
+
+
+    })
+  })
